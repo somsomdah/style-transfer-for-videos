@@ -57,7 +57,7 @@ class ImageSegmentation:
 
         return input_image
 
-    def generate_mask(self, seg_mask, threshold=0.5):
+    def generate_mask(self, seg_mask, threshold=0.1):
         height, width = self.height, self.width
         prediction = seg_mask
         mask_ori = (prediction.squeeze()[:, :, 1] > threshold).astype(np.uint8)
